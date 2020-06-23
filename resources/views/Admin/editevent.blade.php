@@ -128,9 +128,15 @@
                                       </div>
                                     </div>
                                     <div class="form-group row">
-                                            <label  class="col-sm-2 col-form-label">Waktu Pelaksanaan</label>
+                                           <label  class="col-sm-2 col-form-label">Waktu Pelaksanaan</label>
                                             <div class="col-sm-5">
                                                     <input type="text" required="required" name="waktu_pelaksanaan" value="{{ $e->waktu_pelaksanaan}}" class="form-control">
+                                            </div>
+                                          </div>
+                                   <div class="form-group row">
+                                            <label  class="col-sm-2 col-form-label">Titik Start</label>
+                                            <div class="col-sm-5">
+                                                    <input type="text" required="required" name="lokasi" value="{{ $e->lokasi}}" class="form-control">
                                             </div>
                                           </div>
                                      <div class="form-group row">
@@ -147,10 +153,21 @@
                                             </div>
                                           </div>   
                                     <div class="form-group row">
+                                            <label class="col-sm-2 col-form-label">Durasi</label>
+                                            <div class="col-sm-5">
+                                                    <input type="text" required="required" name="durasi" value="{{ $e->durasi}}" class="form-control">
+                                            </div>
+                                          </div>   
+                                    <div class="form-group row">
                                             <label class="col-sm-2 col-form-label">Harga Tiket</label>
                                             <div class="col-sm-5">
                                                     <input type="text" required="required" name="harga_tiket" value="{{ $e->harga_tiket}}" class="form-control">
-
+                                            </div>
+                                          </div>   
+                                     <div class="form-group row">
+                                            <label class="col-sm-2 col-form-label">Kuota</label>
+                                            <div class="col-sm-5">
+                                                    <input type="text" required="required" name="kuota" value="{{ $e->kuota}}" class="form-control">
                                             </div>
                                           </div>   
                                    <input type="submit" value="Simpan Data" class="btn btn-primary" >

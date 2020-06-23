@@ -111,22 +111,28 @@
                             <th>Nama Event</th>
                             <th>Rincian</th>
                             <th>Waktu Pelaksanaan</th>
+                            <th>Titik Start</th>
                             <th>Rute</th>
                             <th>Jarak</th>
+                            <th>Durasi</th>
                             <th>Harga Tiket</th>
+                            <th>Kuota</th>
                             <th>Update</th>
                     </tr>
                   </thead>
                   <tfoot>
                     <tr>
-                            <th>No</th>
+                    <th>No</th>
                             <th>Gambar Event</th>
                             <th>Nama Event</th>
                             <th>Rincian</th>
                             <th>Waktu Pelaksanaan</th>
+                            <th>Titik Start</th>
                             <th>Rute</th>
                             <th>Jarak</th>
+                            <th>Durasi</th>
                             <th>Harga Tiket</th>
+                            <th>Kuota</th>
                             <th>Update</th>
                     </tr>
                   </tfoot>
@@ -141,9 +147,13 @@
                             <td>{{ $e->nama_event}}</td>
                             <td>{{ $e->rincian_event}}</td>
                             <td>{{ $e->waktu_pelaksanaan}}</td>
+                            <td>{{ $e->lokasi}}</td>
                             <td>{{ $e->rute}}</td>
                             <td>{{ $e->jarak}}</td>
+                            <td>{{ $e->durasi}}</td>
                             <td>{{ $e->harga_tiket}}</td>
+                            <td>{{ $e->kuota}}</td>
+
                             <td>
                                 <a href="/admin/hapus_event/{{ $e->id }}" class="btn btn-primary">Hapus</a>
                                 <a href="/admin/edit_event/{{ $e->id }}" class="btn btn-primary">Edit</a>

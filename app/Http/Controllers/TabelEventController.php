@@ -43,9 +43,12 @@ public function store(Request $request)
 		'nama_event' => $request->nama_event,
 		'rincian_event' => $request->rincian_event,
 		'waktu_pelaksanaan' => $request->waktu_pelaksanaan,
+		'lokasi' => $request->lokasi,
 		'rute' => $request->rute,
 		'jarak' => $request->jarak,
+		'durasi' => $request->durasi,
 		'harga_tiket' => $request->harga_tiket,
+		'kuota' => $request->kuota,
 		'gambar_event' => $img,
 	]);
 
@@ -70,10 +73,13 @@ public function update(Request $request)
 	DB::table('events')->where('id',$request->id)->update([
 		'nama_event' => $request->nama_event,
 		'rincian_event' => $request->rincian_event,
-        'waktu_pelaksanaan' => $request->waktu_pelaksanaan,
+		'waktu_pelaksanaan' => $request->waktu_pelaksanaan,
+		'lokasi' => $request->lokasi,
 		'rute' => $request->rute,
 		'jarak' => $request->jarak,
-        'harga_tiket' => $request->harga_tiket
+		'durasi' => $request->durasi,
+		'harga_tiket' => $request->harga_tiket,
+		'kuota' => $request->kuota,
 	]);
 
 	return redirect('/admin/tabel_event');

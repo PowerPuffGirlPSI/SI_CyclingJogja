@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddJarakOnEvents extends Migration
+class AddLokasiToEvents extends Migration
 {
     /**
      * Run the migrations.
@@ -15,7 +15,7 @@ class AddJarakOnEvents extends Migration
     {
         Schema::table('events', function (Blueprint $table) {
             //
-        $table->string('jarak')->nullable()->after('rute');
+            $table->string('lokasi')->nullable()->after('waktu_pelaksanaan');
         });
     }
 
@@ -28,7 +28,7 @@ class AddJarakOnEvents extends Migration
     {
         Schema::table('events', function (Blueprint $table) {
             //
-            $table->string('jarak')->nullable()->after('rute');
+            $table->string('lokasi')->nullable()->after('waktu_pelaksanaan');
         });
     }
 }
