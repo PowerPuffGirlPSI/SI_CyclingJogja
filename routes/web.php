@@ -72,6 +72,9 @@ Route::get('/admin/hapus_tiket/{id}','TabelTiketController@hapus');
 
 Route::get('/admin/tabel_penyewa','TabelPenyewaController@index');
 Route::get('/admin/hapus_penyewa/{id}','TabelPenyewaController@hapus');
+Route::get('/admin/edit_penyewa/{id}','TabelPenyewaController@edit');
+Route::post('/admin/update_penyewa','TabelPenyewaController@update');
+
 
 
 

@@ -105,8 +105,15 @@
                   <thead>
                     <tr>
                             <th>No</th>
-                            <th>Nama Peserta</th>
+                            <th>Peserta</th>
                             <th>Sepeda yang disewa</th>
+                            <th>Kondisi</th>
+                            <th>Status</th>
+                            <th>Status Penyewaan</th>
+                            <th>Tanggal Sewa</th>
+                            <th>Nomor Tranksaksi Penyewaan</th>
+                            <th>Jumlah Barang Penyewaan</th>
+                            <th>Kondisi Kembali Penyewaan</th>
                             <th>No Token</th>
                             <th>Update</th>
                     </tr>
@@ -114,8 +121,15 @@
                   <tfoot>
                     <tr>
                             <th>No</th>
-                            <th>Nama Peserta</th>
+                            <th>Peserta</th>
                             <th>Sepeda yang disewa</th>
+                            <th>Kondisi</th>
+                            <th>Status</th>
+                            <th>Status Penyewaan</th>
+                            <th>Tanggal Sewa</th>
+                            <th>Nomor Tranksaksi Penyewaan</th>
+                            <th>Jumlah Barang Penyewaan</th>
+                            <th>Kondisi Kembali Penyewaan</th>
                             <th>No Token</th>
                             <th>Update</th>
                     </tr>
@@ -129,6 +143,13 @@
                    <td>{{$no++}}</td>
                    <td>{{$p->id_user}}</td>
                    <td>{{$p->id_sepeda}}</td>
+                   <td>{{$p->kondisi}}</td>
+                   <td>{{$p->status}}</td>
+                   <td>{{$p->status_penyewaan}}</td>
+                   <td>{{$p->tanggal_sewa}}</td>
+                   <td>{{$p->nomor_transaksi_penyewaan}}</td>
+                   <td>{{$p->jumlah_barang_penyewaan}}</td>
+                   <td>{{$p->kondisi_kembali_penyewaan}}</td>
                    <td>{{$p->token}}</td>
                    <td>
                       <a href="/admin/hapus_penyewa/{{ $p->id }}" class="btn btn-primary">Hapus</a>

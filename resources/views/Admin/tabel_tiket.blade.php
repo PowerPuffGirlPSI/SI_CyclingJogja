@@ -105,17 +105,25 @@
                   <thead>
                     <tr>
                             <th>No</th>
-                            <th>Nama Peserta</th>
+                            <th>Peserta</th>
                             <th>Event yang diikuti</th>
+                            <th>Status Pemesanan</th>
+                            <th>Tanggal Pemesanan</th>
+                            <th>Jumlah Pesanan</th>
+                            <th>Nomor Transaksi Pemesanan</th>
                             <th>No Token</th>
                             <th>Update</th>
                     </tr>
                   </thead>
                   <tfoot>
                     <tr>
-                            <th>No</th>
-                            <th>Nama Peserta</th>
+                    <th>No</th>
+                            <th>Peserta</th>
                             <th>Event yang diikuti</th>
+                            <th>Status Pemesanan</th>
+                            <th>Tanggal Pemesanan</th>
+                            <th>Jumlah Pesanan</th>
+                            <th>Nomor Transaksi Pemesanan</th>
                             <th>No Token</th>
                             <th>Update</th>
                     </tr>
@@ -129,6 +137,10 @@
                    <td>{{$no++}}</td>
                    <td>{{$t->id_user}}</td>
                    <td>{{$t->id_event}}</td>
+                   <td>{{$t->status_pemesanan}}</td>
+                   <td>{{$t->tgl_pemesanan}}</td>
+                   <td>{{$t->jumlah_barang_pemesanan}}</td>
+                   <td>{{$t->nomor_transaksi_pemesanan}}</td>
                    <td>{{$t->token}}</td>
                    <td>
                       <a href="/admin/hapus_tiket/{{ $t->id }}" class="btn btn-primary">Hapus</a>
