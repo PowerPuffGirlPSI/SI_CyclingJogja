@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class Drop1ToPenyewas extends Migration
+class DropToSoals extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class Drop1ToPenyewas extends Migration
      */
     public function up()
     {
-        Schema::drop('penyewas');
+        Schema::drop('soals');
     }
 
     /**
@@ -23,6 +23,8 @@ class Drop1ToPenyewas extends Migration
      */
     public function down()
     {
-        
+        Schema::table('soals', function (Blueprint $table) {
+            //
+        });
     }
 }
