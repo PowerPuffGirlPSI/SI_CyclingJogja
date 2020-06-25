@@ -33,15 +33,13 @@ class TabelPenyewaController extends Controller
 {
 
 	DB::table('penyewas')->where('id',$request->id)->update([
-		'nama_event' => $request->nama_event,
-		'rincian_event' => $request->rincian_event,
-		'waktu_pelaksanaan' => $request->waktu_pelaksanaan,
-		'lokasi' => $request->lokasi,
-		'rute' => $request->rute,
-		'jarak' => $request->jarak,
-		'durasi' => $request->durasi,
-		'harga_tiket' => $request->harga_tiket,
-		'kuota' => $request->kuota,
+		'kondisi' => $request->kondisi,
+		'status' => $request->status,
+		'id_user' => $request->id_user,
+		'status_penyewaan' => $request->status_penyewaan,
+		'kondisi_kembali_penyewaan' => $request->kondisi_kembali_penyewaan,
+        'id_sepeda' => $request->id_sepeda,
+        'token' => $request->token,        
 	]);
 
 	return redirect('/admin/tabel_event');

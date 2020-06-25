@@ -42,9 +42,14 @@ class PemesananSepedaController extends Controller
         $token = rand(10,100);
 
 	DB::table('penyewas')->insert([
-        'id_user' => $id_user,
-        'id_sepeda'=>$id_sepeda,
+        'kondisi' => $kondisi,
+		'status' => $status,
+		'id_user' => $id_user,
+		'status_penyewaan' => $status_penyewaan,
+		'kondisi_kembali_penyewaan' => $kondisi_kembali_penyewaan,
+        'id_sepeda' => $id_sepeda,
         'token' => $token
+
 	    ]);
 
 	return redirect('/tiket');
