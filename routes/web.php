@@ -67,6 +67,8 @@ Route::post('/admin/update_event','TabelEventController@update');
 Route::get('/admin/hapus_event/{id}','TabelEventController@hapus');
 
 Route::get('/admin/tabel_tiket','TabelTiketController@index');
+Route::get('/admin/edit_pendaftar/{id}','TabelTiketController@edit');
+Route::post('/admin/update_pendaftar','TabelTiketController@update');
 Route::get('/admin/hapus_tiket/{id}','TabelTiketController@hapus');
 
 
