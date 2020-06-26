@@ -47,6 +47,7 @@
                           <p class="card-text">{{ $event[0]->waktu_pelaksanaan}}</p>
                           <div class="features-icons-item mx-auto mb-0 mb-lg-3">
                               <div class="features-icons-icon d-flex">
+                              <!-- <input type="number" name="id_event" required="required"> -->
                                 <table>
                                   <tr>  
                                    <td><h6>Nama</h6></td>
@@ -63,10 +64,12 @@
                                         <td>:</td>
                                         <td><h6>{{ $event[0]->harga_tiket}}</h6></td>
                                       </tr>
+                                      
                                 </table>
                               </div>
                           <a href="/homepage" class="btn btn-primary" style="background-color:#F38230; border-color:#F38230">Batalkan</a>
-                            <a href="/pesan_tiket/{{$event[0]->id}}" class="btn btn-primary" style="background-color:#F38230; border-color:#F38230">Pesan</a>
+                          <a href="/pesan_tiket/{{$event[0]->id}}" class="btn btn-primary" style="background-color:#F38230; border-color:#F38230">Pesan</a>
+                            </form>
                         </div>
                       </div>
                 </div>

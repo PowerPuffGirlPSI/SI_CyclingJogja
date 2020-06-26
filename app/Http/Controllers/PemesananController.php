@@ -21,7 +21,7 @@ class PemesananController extends Controller
 
         $user = Auth::user(); 
         //print($user->id);
-
+        $event = DB::table('events');
         $event = DB::table('events')->where('id', $id)->get();
         $user = DB::table('users')->where('id', $user->id)->get();
 
@@ -41,18 +41,21 @@ class PemesananController extends Controller
     {
         $user = Auth::user();
         $id_user =  $user->id;
-
-        $token = rand(100000000, 99999999);
+        $status_pemesanan= NULL;
+        $token = rand(1, 99999999);
+        // $id_event=$events->id;
 
 	DB::table('pendaftars')->insert([
         'id_user' => $id_user,
         'id_event'=>$id_event,
-        'token' => $token
-	    ]);
+        'status_pemesanan'=>$status_pemesanan,	
+        'token' => $token,
+    ]);
 
 	return redirect('/tiket');
 
 }
+
     public function create()
     {
         //

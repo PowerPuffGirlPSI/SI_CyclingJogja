@@ -9,7 +9,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Cycling Jogja Admin - Pemesanan Tiket</title>
+  <title>Cycling Jogja Admin - Edit Sepeda</title>
 
   <!-- Custom fonts for this template -->
   <link href="/admin/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -42,7 +42,6 @@
         <!-- Divider -->
         <hr class="sidebar-divider my-0">
     
-        <!-- Nav Item - Dashboard -->
         <li class="nav-item">
           <a class="nav-link" href="/admin/dashboard">
             <i class="fas fa-fw fa-tachometer-alt"></i>
@@ -77,7 +76,6 @@
         </li>
     
     
-    
         <!-- Sidebar Toggler (Sidebar) -->
         <div class="text-center d-none d-md-inline">
           <button class="rounded-circle border-0" id="sidebarToggle"></button>
@@ -97,53 +95,56 @@
           <!-- DataTales Example -->
           <div class="card shadow mb-4">
             <div class="card-header py-3">
-              <h6 class="m-0 font-weight-bold text-primary">Data Pemesanan Tiket</h6>
+              <h6 class="m-0 font-weight-bold text-primary">Form Tambah Event</h6>
             </div>
             <div class="card-body">
+                    
               <div class="table-responsive">
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                   <thead>
-                    <tr>
-                    <th>No</th>
-                            <th>Peserta</th>
-                            <th>Event yang diikuti</th>
-                            <th>Status Pemesanan</th>
-                            <th>No Token</th>
-                            <th>Tanggal Pemesanan</th>
-                            <th>Update</th>
-                    </tr>
+                     <tbody>
+                            @foreach($pendaftar as $p)
+                            <form action="/admin/update_pendaftar" method="post">
+                         {{ csrf_field() }}
+                                     <input type="hidden" name="id" value="{{ $p->id }}"> <br/>
+                                    <div class="form-group row">
+                                            <label  class="col-sm-2 col-form-label">id_user</label>
+                                            <div class="col-sm-5">
+                                            {{ $p->id_user }}
+                                            </div>
+                                          </div>
+                                    <div class="form-group row">
+                                      <label  class="col-sm-2 col-form-label">id_event</label>
+                                      <div class="col-sm-5">
+                                      {{ $p->id_event }}
+                                      </div>
+                                    </div>
+                                    <div class="form-group row">
+                                            <label  class="col-sm-2 col-form-label">Token</label>
+                                            <div class="col-sm-5">
+                                            {{ $p->token }}       
+                                            </div>
+                                          </div> 
+                                          <div class="form-group row">
+                                            <label  class="col-sm-2 col-form-label">Status Pemesanan</label>
+                                            <div class="col-sm-5">
+                                            <input type="text" required="required" name="status_pemesanan" value="{{ $p->status_pemesanan }}">     
+                                            </div>
+                                          </div> 
+                                          <div class="form-group row">
+                                            <label  class="col-sm-2 col-form-label">Tanggal Pemesanan</label>
+                                            <div class="col-sm-5">
+                                            {{ $p->created_at }}       
+                                            </div>
+                                          </div> 
+                                   <input type="submit" value="Simpan Data" class="btn btn-primary" >
+                                  </form>
+                                  @endforeach
+                      </tbody>
                   </thead>
-                  <tfoot>
-                    <tr>
-                            <th>No</th>
-                            <th>Peserta</th>
-                            <th>Event yang diikuti</th>
-                            <th>Status Pemesanan</th>
-                            <th>No Token</th>
-                            <th>Tanggal Pemesanan</th>
-                            <th>Update</th>
-                    </tr>
-                  </tfoot>
-                  <tbody>
-                  <?php
-                   $no=1;
-                  ?>
-                  @foreach($pendaftars as $t)
-                <tr>
-                   <td>{{$no++}}</td>
-                   <td>{{$t->id_user}}</td>
-                   <td>{{$t->id_event}}</td>
-                   <td>{{$t->status_pemesanan}}</td>
-                   <td>{{$t->token}}</td>
-                   <td>{{$t->created_at}}</td>                 
-                     <td>
-                     <a href="/admin/edit_pendaftar/{{ $t->id }}" class="btn btn-primary">Edit</a>
-                      <a href="/admin/hapus_tiket/{{ $t->id }}" class="btn btn-primary">Hapus</a>
-                  </td>
-                 </tr>
-                 @endforeach
-                  </tbody>
                 </table>
+                
+              </div>
             </div>
           </div>
 
@@ -152,9 +153,7 @@
 
       </div>
       <!-- End of Main Content -->
-      
-      <!-- Footer -->
-      <!-- End of Footer -->
+
 
     </div>
     <!-- End of Content Wrapper -->
