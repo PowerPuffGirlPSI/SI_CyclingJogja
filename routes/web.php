@@ -71,13 +71,10 @@ Route::get('/admin/edit_pendaftar/{id}','TabelTiketController@edit');
 Route::post('/admin/update_pendaftar','TabelTiketController@update');
 Route::get('/admin/hapus_tiket/{id}','TabelTiketController@hapus');
 
-
 Route::get('/admin/tabel_penyewa','TabelPenyewaController@index');
-Route::get('/admin/hapus_penyewa/{id}','TabelPenyewaController@hapus');
 Route::get('/admin/edit_penyewa/{id}','TabelPenyewaController@edit');
 Route::post('/admin/update_penyewa','TabelPenyewaController@update');
-
-
+Route::get('/admin/hapus_penyewa/{id}','TabelPenyewaController@hapus');
 
 
 Route::get('/admin/tabel_sepeda','TabelSepedaController@index');
@@ -93,3 +90,7 @@ Route::post('/admin/store_soal','SoalController@store');
 Route::get('/admin/edit_soal/{id}','SoalController@edit');
 Route::post('/admin/update_soal','SoalController@update');
 Route::get('/admin/hapus_soal/{id}','SoalController@hapus');
+
+Route::get('/admin/laporan_peserta','LaporanPesertaController@index');
+Route::get('/admin/laporan_penyewa','LaporanPenyewaController@index');
+

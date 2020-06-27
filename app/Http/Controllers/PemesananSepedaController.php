@@ -38,8 +38,12 @@ class PemesananSepedaController extends Controller
     {
         $user = Auth::user();
         $id_user =  $user->id;
+        $kondisi= NULL;
+        $status= NULL;
+        $status_penyewaan= NULL;
+        $kondisi_kembali_penyewaan= NULL;
 
-        $token = rand(10,100);
+        $token = rand(1, 99999999);
 
 	DB::table('penyewas')->insert([
         'kondisi' => $kondisi,

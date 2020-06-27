@@ -1,6 +1,5 @@
 @include('include.sidebaradmin')
 
-  
     
     <!-- Content Wrapper -->
     <div id="content-wrapper" class="d-flex flex-column">
@@ -13,7 +12,7 @@
           <!-- DataTales Example -->
           <div class="card shadow mb-4">
             <div class="card-header py-3">
-              <h6 class="m-0 font-weight-bold text-primary">Data Event</h6>
+              <h6 class="m-0 font-weight-bold text-primary">Data Pemesanan Tiket</h6>
             </div>
             <div class="card-body">
               <div class="table-responsive">
@@ -21,49 +20,36 @@
                   <thead>
                     <tr>
                             <th>No</th>
-                            <th>Soal</th>
-                            <th>Opsi A</th>
-                            <th>Opsi B</th>
-                            <th>Opsi C</th>
-                            <th>Opsi D</th>
-                            <th>Jawaban Benar</th>
-                            <th>Update</th>
+                            <th>Nama Penyewa</th>
+                            <th>Sepeda Yang Dipinjam</th>
+                            <th>Kondisi Kembali Penyewaan</th>
+                            <th>No Token</th>
                     </tr>
                   </thead>
                   <tfoot>
                     <tr>
-                    <th>No</th>
-                            <th>Soal</th>
-                            <th>Opsi A</th>
-                            <th>Opsi B</th>
-                            <th>Opsi C</th>
-                            <th>Opsi D</th>
-                            <th>Jawaban Benar</th>
-                            <th>Update</th>
+                            <th>No</th>
+                            <th>Nama Penyewa</th>
+                            <th>Sepeda Yang Dipinjam</th>
+                            <th>Kondisi Kembali Penyewaan</th>
+                            <th>No Token</th>
                     </tr>
                   </tfoot>
                   <tbody>
                   <?php
-                    $no=1;
+                   $no=1;
                   ?>
-                        @foreach($soal as $so)
-                        <tr>
-                            <td>{{$no++}}</td>
-                            <td>{{ $so->soal}}</td>
-                            <td>{{ $so->opsi_a}}</td>
-                            <td>{{ $so->opsi_b}}</td>
-                            <td>{{ $so->opsi_c}}</td>
-                            <td>{{ $so->opsi_d}}</td>
-                            <td>{{ $so->jawaban_benar}}</td>
-                            <td>
-                                <a href="/admin/hapus_soal/{{ $so->id }}" class="btn btn-primary">Hapus</a>
-                                <a href="/admin/edit_soal/{{ $so->id }}" class="btn btn-primary">Edit</a>
-                            </td>
-                        </tr>
-                        @endforeach
+                  @foreach($laporan_penyewa as $t)
+                <tr>
+                   <td>{{$no++}}</td>
+                   <td>{{$t->nama}}</td>
+                   <td>{{$t->jenis}}</td>
+                   <td>{{$t->kondisi_kembali_penyewaan}}</td>
+                   <td>{{$t->token}}</td>
+                 </tr>
+                 @endforeach
                   </tbody>
                 </table>
-                <a href="/admin/tambah_soal" class="btn btn-primary">Tambah</a>
             </div>
           </div>
 
@@ -72,7 +58,9 @@
 
       </div>
       <!-- End of Main Content -->
-
+      
+      <!-- Footer -->
+      <!-- End of Footer -->
 
     </div>
     <!-- End of Content Wrapper -->
@@ -84,7 +72,7 @@
   <a class="scroll-to-top rounded" href="#page-top">
     <i class="fas fa-angle-up"></i>
   </a>
-  
+
   @include('include.logoutmodal')
 
   <!-- Bootstrap core JavaScript-->
