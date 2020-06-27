@@ -23,9 +23,9 @@ class TabelPenyewaController extends Controller
     public function edit($id)
     {
     
-        $events = DB::table('penyewas')->where('id',$id)->get();
+        $penyewa = DB::table('penyewas')->where('id',$id)->get();
     
-        return view('/Admin/editpenyewa',compact('penyewas'));
+        return view('/Admin/editpenyewa',compact('penyewa'));
     
     
     }
@@ -35,13 +35,10 @@ class TabelPenyewaController extends Controller
 	DB::table('penyewas')->where('id',$request->id)->update([
 		'kondisi' => $request->kondisi,
 		'status' => $request->status,
-		'id_user' => $request->id_user,
 		'status_penyewaan' => $request->status_penyewaan,
 		'kondisi_kembali_penyewaan' => $request->kondisi_kembali_penyewaan,
-        'id_sepeda' => $request->id_sepeda,
-        'token' => $request->token,        
 	]);
 
-	return redirect('/admin/tabel_event');
+	return redirect('/admin/tabel_penyewa');
 }
 }

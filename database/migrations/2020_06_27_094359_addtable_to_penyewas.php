@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class EditColumnToPenyewas extends Migration
+class AddtableToPenyewas extends Migration
 {
     /**
      * Run the migrations.
@@ -15,9 +15,11 @@ class EditColumnToPenyewas extends Migration
     {
         Schema::table('penyewas', function (Blueprint $table) {
             $table->string('kondisi')->nullable();
-            // $table->string('status')->nullable();
-            // $table->string('status_penyewaan')->nullable();
-            // $table->string('kondisi_kembali_penyewaan')->nullable();
+            $table->string('status')->nullable();
+            $table->string('status_penyewaan')->nullable();
+            $table->string('kondisi_kembali_penyewaan')->nullable();
+
+
         });
     }
 
@@ -29,10 +31,7 @@ class EditColumnToPenyewas extends Migration
     public function down()
     {
         Schema::table('penyewas', function (Blueprint $table) {
-            $table->drppColumn('kondisi');
-            // $table->drppColumn('status');
-            // $table->drppColumn('status_penyewaan');
-            // $table->drppColumn('kondisi_kembali_penyewaan');
+            //
         });
     }
 }

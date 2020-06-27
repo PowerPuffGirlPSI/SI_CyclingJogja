@@ -12,7 +12,7 @@
           <!-- DataTales Example -->
           <div class="card shadow mb-4">
             <div class="card-header py-3">
-              <h6 class="m-0 font-weight-bold text-primary">Form Tambah Event</h6>
+              <h6 class="m-0 font-weight-bold text-primary">Form Edit Penyewa</h6>
             </div>
             <div class="card-body">
                     
@@ -20,52 +20,61 @@
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                   <thead>
                      <tbody>
-                      <form action="/admin/store_event" method="post" enctype="multipart/form-data">
-                            {{ csrf_field() }}
-                            <div class="form-group row">
-                                    <label class="col-sm-2 col-form-label">Gambar Event</label>
-                                    <div class="col-sm-5">
-                                      <input type="file" name="gambar_event" required="required" class="form-control">
-                                    </div>
-                                  </div>
+                            @foreach($penyewa as $p)
+                            <form action="/admin/update_penyewa" method="post">
+                         {{ csrf_field() }}
+                                     <input type="hidden" name="id" value="{{ $p->id }}"> <br/>
                                     <div class="form-group row">
-                                            <label  class="col-sm-2 col-form-label">Nama Event</label>
+                                            <label  class="col-sm-2 col-form-label">id_user</label>
                                             <div class="col-sm-5">
-                                              <input type="text" name="nama_event" required="required" class="form-control">
+                                            {{ $p->id_user }}
                                             </div>
                                           </div>
                                     <div class="form-group row">
-                                      <label  class="col-sm-2 col-form-label">Rincian Event</label>
+                                      <label  class="col-sm-2 col-form-label">id_sepeda</label>
                                       <div class="col-sm-5">
-                                        <textarea class="form-control" name="rincian_event" required="required"></textarea>
+                                      {{ $p->id_sepeda }}
                                       </div>
                                     </div>
                                     <div class="form-group row">
-                                            <label  class="col-sm-2 col-form-label">Waktu Pelaksanaan</label>
+                                            <label  class="col-sm-2 col-form-label">Kondisi Sepeda</label>
                                             <div class="col-sm-5">
-                                                    <input type="date" name="waktu_pelaksanaan" required="required" class="form-control">
+                                            <input type="text" required="required" name="kondisi" value="{{ $p->kondisi }}">     
                                             </div>
-                                          </div>
+                                     </div> 
                                      <div class="form-group row">
-                                      <label class="col-sm-2 col-form-label">Rute</label>
-                                      <div class="col-sm-5">
-                                            <textarea class="form-control" name="rute" required="required"></textarea>
-                                      </div>
-                                    </div>  
-                                    <div class="form-group row">
-                                            <label class="col-sm-2 col-form-label">Jarak</label>
+                                            <label  class="col-sm-2 col-form-label">Status Sepeda</label>
                                             <div class="col-sm-5">
-                                              <input type="text" name="jarak" required="required" class="form-control">
+                                            <input type="text" required="required" name="status" value="{{ $p->status }}">     
                                             </div>
-                                          </div>   
+                                    </div> 
                                     <div class="form-group row">
-                                            <label class="col-sm-2 col-form-label">Harga Tiket</label>
+                                            <label  class="col-sm-2 col-form-label">Status Penyewaan</label>
                                             <div class="col-sm-5">
-                                              <input type="text" name="harga_tiket" required="required" class="form-control">
+                                            <input type="text" required="required" name="status_penyewaan" value="{{ $p->status_penyewaan }}">     
                                             </div>
-                                          </div>   
+                                    </div> 
+                                    <div class="form-group row">
+                                            <label  class="col-sm-2 col-form-label">Kondisi Kembali Penyewaan</label>
+                                            <div class="col-sm-5">
+                                            <input type="text" required="required" name="kondisi_kembali_penyewaan" value="{{ $p->kondisi_kembali_penyewaan}}">     
+                                            </div>
+                                    </div> 
+                                     <div class="form-group row">
+                                            <label  class="col-sm-2 col-form-label">Token</label>
+                                            <div class="col-sm-5">
+                                            {{ $p->token }}       
+                                            </div>
+                                          </div> 
+                                    <div class="form-group row">
+                                            <label  class="col-sm-2 col-form-label">Tanggal Pemesanan</label>
+                                            <div class="col-sm-5">
+                                            {{ $p->created_at }}       
+                                            </div>
+                                          </div> 
                                    <input type="submit" value="Simpan Data" class="btn btn-primary" >
                                   </form>
+                                  @endforeach
                       </tbody>
                   </thead>
                 </table>
@@ -80,8 +89,6 @@
       </div>
       <!-- End of Main Content -->
 
-      <!-- Footer -->
-      <!-- End of Footer -->
 
     </div>
     <!-- End of Content Wrapper -->
