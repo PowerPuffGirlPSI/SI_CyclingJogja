@@ -57,8 +57,18 @@
                                         <td>:</td>
                                         <td><h6>{{ $sepeda[0]->harga}}</h6></td>
                                       </tr>
+                                      <tr>  
+                                        <td><h6>Event yang dituju </h6></td>
+                                        <td>:</td>
+                                        <td><h6><select name="eventyangdituju" class="form-control @error('eventyangdituju') is-invalid @enderror">
+                                          @foreach($tiket as $t)
+                                            <option value="L" autocomplete="eventyangdituju" autofocus>{{$t->nama_event}}</option>
+                                          @endforeach
+                                      </select></h6></td>
+                                      </tr>
                                 </table>
                               </div>
+                              
                           <a href="/sewa" class="btn btn-primary" style="background-color:#F38230; border-color:#F38230">Batalkan</a>
                             <a href="/pesan_sepeda/{{$sepeda[0]->id}}" class="btn btn-primary" style="background-color:#F38230; border-color:#F38230">Pesan</a>
                         </div>

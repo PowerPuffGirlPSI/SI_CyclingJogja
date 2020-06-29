@@ -20,13 +20,17 @@ class PemesananSepedaController extends Controller
         $events = DB::table('events')->where('waktu_pelaksanaan','!=','{{$event->waktu_pelaksanaan}}')
         ->orderBy('waktu_pelaksanaan', 'asc')->get();
  
+        $tiket = DB::table('pendaftars')->where('id_user', $user->id)
+                ->join('users','pendaftars.id_user','=','users.id')
+                ->join('events','pendaftars.id_event','=','events.id')
+                ->get();
 
         $sepeda = DB::table('sepedas')->where('id', $id)->get();
         $user = DB::table('users')->where('id', $user->id)->get();
 
         
 
-        return view('pemesanansepeda',compact('sepeda','user','events'));
+        return view('pemesanansepeda',compact('sepeda','user','events', 'tiket'));
     }
 
     /**
