@@ -94,3 +94,6 @@ Route::get('/admin/hapus_soal/{id}','SoalController@hapus');
 Route::get('/admin/laporan_peserta','LaporanPesertaController@index');
 Route::get('/admin/laporan_penyewa','LaporanPenyewaController@index');
 
+Route::get('/admin/laporan_sepeda','LaporanSepedaController@index');
+
+

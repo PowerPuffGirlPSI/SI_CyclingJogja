@@ -45,6 +45,7 @@ class PemesananController extends Controller
         $id_user =  $user->id;
         $status_pemesanan= NULL;
         $token = rand(1, 99999999);
+        $jumlah_barang_pesan = 1;
         // $id_event=$events->id;
 
 	DB::table('pendaftars')->insert([
@@ -52,6 +53,7 @@ class PemesananController extends Controller
         'id_event'=>$id_event,
         'status_pemesanan'=>$status_pemesanan,	
         'token' => $token,
+        'jumlah_barang_pesan'=>$jumlah_barang_pesan,
     ]);
 
 	return redirect('/tiket');
