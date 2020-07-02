@@ -16,8 +16,9 @@ class SewaSepedaController extends Controller
     {
         $sepedas = DB::table('sepedas')->get();
         $events = DB::table('events')->where('waktu_pelaksanaan','!=','{{$event->waktu_pelaksanaan}}')
-        ->orderBy('waktu_pelaksanaan', 'asc')->get();
- 
+        ->orderBy('waktu_pelaksanaan', 'asc')
+        ->limit(2)
+        ->get();
         return view('sewasepedawelcome', compact('sepedas','events'));
     }
 

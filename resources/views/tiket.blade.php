@@ -65,6 +65,7 @@
         <div class="nama-pengguna">{{$datas->nama}}</div>
         <div class="harga-tiket"> Harga Sepeda : {{$datas->harga}} </div>
         <div class="nama-event">{{$datas->jenis}}</div>
+        <div class="nama-event">{{$datas->nama_event}}</div>
         <div class="token">{{$datas->token}}</div>
       </div>
       <br>

@@ -16,7 +16,9 @@ class TentangController extends Controller
     public function index()
     {
         $events = DB::table('events')->where('waktu_pelaksanaan','!=','{{$event->waktu_pelaksanaan}}')
-                    ->orderBy('waktu_pelaksanaan', 'asc')->get();
+        ->orderBy('waktu_pelaksanaan', 'asc')
+        ->limit(2)
+        ->get();
              
         return view('tentang', compact('events'));
     }

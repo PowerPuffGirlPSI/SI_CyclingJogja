@@ -1,7 +1,7 @@
 <div class="container">
 
 <!-- Page Heading -->
-<h3 class="my-4">Event yang Akan Datang
+<h3 class="my-4">Event Yang Telah Berlalu
   <small></small>
 </h3>
 
@@ -46,7 +46,6 @@
       </table>
     </div>
     </div>
-    <a class="btn btn-primary" style="background-color:#F38230; border-color:#F38230" href="/login">Gabung</a>
   </div>
 </div>
 <br><br>

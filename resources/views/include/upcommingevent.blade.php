@@ -2,7 +2,7 @@
     <div class="container">
 
       <!-- Page Heading -->
-      <h3 class="my-4">Event yang Akan Datang
+      <h3 class="my-4">Event Yang Telah Berlalu
         <small></small>
       </h3>
 

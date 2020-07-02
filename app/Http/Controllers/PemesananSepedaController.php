@@ -18,19 +18,17 @@ class PemesananSepedaController extends Controller
         $user = Auth::user(); 
         //print($user->id);
         $events = DB::table('events')->where('waktu_pelaksanaan','!=','{{$event->waktu_pelaksanaan}}')
-        ->orderBy('waktu_pelaksanaan', 'asc')->get();
+        ->orderBy('waktu_pelaksanaan', 'asc')
+        ->limit(2)
+        ->get();
  
-        $tiket = DB::table('pendaftars')->where('id_user', $user->id)
-                ->join('users','pendaftars.id_user','=','users.id')
-                ->join('events','pendaftars.id_event','=','events.id')
-                ->get();
-
+        $event = DB::table('events')->orderBy('waktu_pelaksanaan', 'desc')->get();
         $sepeda = DB::table('sepedas')->where('id', $id)->get();
         $user = DB::table('users')->where('id', $user->id)->get();
 
         
 
-        return view('pemesanansepeda',compact('sepeda','user','events', 'tiket'));
+        return view('pemesanansepeda',compact('sepeda','user','events', 'tiket','event'));
     }
 
     /**
@@ -48,7 +46,7 @@ class PemesananSepedaController extends Controller
         $kondisi_kembali_penyewaan= NULL;
 
         $token = rand(1, 99999999);
-
+         $id_event = DB::table('events')->where('id', $id_event);
 	DB::table('penyewas')->insert([
         'kondisi' => $kondisi,
 		'status' => $status,
@@ -56,8 +54,8 @@ class PemesananSepedaController extends Controller
 		'status_penyewaan' => $status_penyewaan,
 		'kondisi_kembali_penyewaan' => $kondisi_kembali_penyewaan,
         'id_sepeda' => $id_sepeda,
-        'token' => $token
-
+        'token' => $token,
+        'id_event' => $id_event
 	    ]);
 
 	return redirect('/tiket');

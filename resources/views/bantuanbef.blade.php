@@ -78,13 +78,13 @@
 <section class="testimonials text-center bg-light">
   <div class="container">
     <br><br><br>
-    <h2 class="mb-5">Tim Oracle</h2>
+    <h2 class="mb-5">Tim PPG</h2>
     <div class="row">
       <div class="col-lg-3">
         <div class="testimonial-item mx-auto mb-5 mb-lg-0">
-          <img class="img-fluid rounded-circle mb-3" src="img/virdha.jpg" alt="">
-          <h5>Yuvirdha Bektie W</h5>
-          <p class="font-weight-light mb-0">18523147</p>
+          <img class="img-fluid rounded-circle mb-3" src="img/nabila.jpeg" alt="">
+          <h5>Nabiilah Nuur Ainii</h5>
+          <p class="font-weight-light mb-0">18523252</p>
         </div>
       </div>
       <div class="col-lg-3">
@@ -96,9 +96,9 @@
       </div>
       <div class="col-lg-3">
         <div class="testimonial-item mx-auto mb-5 mb-lg-0">
-          <img class="img-fluid rounded-circle mb-3" src="img/laila.jpeg" alt="">
-          <h5>Laila Kusuma W</h5>
-          <p class="font-weight-light mb-0">18523010</p>
+          <img class="img-fluid rounded-circle mb-3" src="img/sabil.jpeg" alt="">
+          <h5>Salsabila</h5>
+          <p class="font-weight-light mb-0">18523160</p>
         </div>
       </div>
       <div class="col-lg-3">
@@ -111,7 +111,6 @@
     </div>
   </div>
 </section>
-
 
 </div>
   @include('include.signup')

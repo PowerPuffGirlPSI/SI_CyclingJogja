@@ -60,11 +60,7 @@
                                       <tr>  
                                         <td><h6>Event yang dituju </h6></td>
                                         <td>:</td>
-                                        <td><h6><select name="eventyangdituju" class="form-control @error('eventyangdituju') is-invalid @enderror">
-                                          @foreach($tiket as $t)
-                                            <option value="L" autocomplete="eventyangdituju" autofocus>{{$t->nama_event}}</option>
-                                          @endforeach
-                                      </select></h6></td>
+                                        <td><h6>{{ $event[0]->nama_event}}</h6></td>
                                       </tr>
                                 </table>
                               </div>
