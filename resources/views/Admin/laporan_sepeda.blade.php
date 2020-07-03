@@ -8,60 +8,42 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <meta name="author" content="">
-
-  <title>Cycling Jogja Admin - Laporan Sepeda</title>
-
+  <title>Cycling Jogja Admin - Laporan</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.js"></script>
   <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script> 
- <!-- Custom fonts for this template -->
   <link href="/admin/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
-
-  <!-- Custom styles for this template -->
   <link href="/admin/css/sb-admin-2.min.css" rel="stylesheet">
-
-  <!-- Custom styles for this page -->
   <link href="/admin/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
   <script src="/admin/vendor/chart.js/Chart.js"></script>
+  <style>
+    .card-header{
+      background-color: rgba(249, 105, 14, 1);
+    }
+  </style>
 </head>
 
 <body id="page-top">
-
-  <!-- Page Wrapper -->
   <div id="wrapper">
-
-    <!-- Sidebar -->
     <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
-
-      <!-- Sidebar - Brand -->
       <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/admin/dashboard">
         <div class="sidebar-brand-icon rotate-n-15">
           <i class="fas fa-laugh-wink"></i>
         </div>
         <div class="sidebar-brand-text mx-3">Cycling Jogja Admin</div>
       </a>
-  
-      <!-- Divider -->
       <hr class="sidebar-divider my-0">
-  
-      <!-- Nav Item - Dashboard -->
       <li class="nav-item">
         <a class="nav-link" href="/admin/dashboard">
           <i class="fas fa-fw fa-tachometer-alt"></i>
           <span>Dashboard</span>
         </a>
       </li>
-  
-      <!-- Divider -->
       <hr class="sidebar-divider">
-  
-      <!-- Heading -->
       <div class="sidebar-heading">
         Menu
       </div>
-  
-      <!-- Nav Item - Pages Collapse Menu -->
       <li class="nav-item active">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
           <i class="fas fa-fw fa-table"></i>
@@ -84,41 +66,36 @@
           <i class="fas fa-fw fa-chart-area"></i>
           <span>Laporan</span></a>
       </li>
-          
-      <!-- Sidebar Toggler (Sidebar) -->
+
       <div class="text-center d-none d-md-inline">
         <button class="rounded-circle border-0" id="sidebarToggle"></button>
       </div>
-    </ul>
-    <!-- End of Sidebar -->
+      </ul>
 
-      <!--content-->
     <div class="container">
-
-      <!-- chart 1 -->
-
-      <div class="col-md-12">
-
+       <div class="col-md-12">
         <!-- LAPORAN TIKET-->
-      <div class="card">
-      <div class="card-header">
-        Peminat berdasarkan acara
-      </div>
-      <div class="card-body">
-        <div class="chart-container">
-          <div class="pie-chart-container">
-          <canvas id="pie-chart" style="display: block; width: 400px; height: 100px;" width="400" height="100" class="chartjs-render-monitor cc_cursor"></canvas>
+        <div id="acara">
+          <div class="card">
+            <div class="card-header">
+            <a class="text-white ">
+              Peminat berdasarkan acara
+            </a>
+            </div>
+            <div class="card-body">
+              <div class="chart-container">
+                <div class="bar-chart-container">
+                  <canvas id="bar-chart" style="display: block; width: 400px; height: 100px;" width="400" height="100" class="chartjs-render-monitor cc_cursor"></canvas>
+                </div>
+              </div> 
+            </div>
           </div>
-        </div> 
         </div>
-      </div>
 
         <script>
           $(function(){
-              //get the bar chart canvas
             var cData = JSON.parse(`<?php echo $chart_data; ?>`);
-            var ctx = $("#pie-chart");
-        
+            var ctx = $("#bar-chart");
               //bar chart data
             var data = {
               labels: cData.label,
@@ -148,8 +125,7 @@
                   }
                 ]
             };
-        
-              //options
+
             var options = {
               responsive: true,
               title: {
@@ -168,8 +144,7 @@
                 }
               }
             };
-        
-              //create bar Chart class object
+
             var chart= new Chart(ctx, {
               type: "bar",
               data: data,
@@ -183,22 +158,25 @@
       <!-- chart 2 -->
       <div class="col-md-12" style="margin-top:50px">
           <!-- LAPORAN SEPEDA -->
-     <div class="card">
-      <div class="card-header">
-        Peminat sepeda berdasarkan jenis
-      </div>
-      <div class="card-body">
-        <div class="chart-container">
-          <div class="pie-chart-container">
-          <canvas id="pie-chart-1" style="display: block; width: 400px; height: 100px;" width="400" height="100" class="chartjs-render-monitor cc_cursor"></canvas>
+        <div id="sepeda">
+          <div class="card">
+            <div class="card-header">
+            <a class="text-white ">
+              Peminat sepeda berdasarkan jenis
+            </a>
+            </div>
+            <div class="card-body">
+              <div class="chart-container">
+                <div class="pie-chart-container">
+                  <canvas id="pie-chart-1" style="display: block; width: 400px; height: 100px;" width="400" height="100" class="chartjs-render-monitor cc_cursor"></canvas>
+                </div>
+              </div> 
+            </div>
           </div>
-        </div> 
-        </div>
       </div>
 
         <script>
           $(function(){
-              //get the pie chart canvas
             var cData1 = JSON.parse(`<?php echo $chart_data1; ?>`);
             var ctx1 = $("#pie-chart-1");
         
@@ -211,7 +189,7 @@
                     data: cData1.data1,
                     backgroundColor: [
                       'rgba(255, 206, 86)',
-                      'rgba(255, 180, 110)',
+                      'rgba(241, 90, 34, 1)',
                       'rgba(75, 192, 192)',
                       'rgba(54, 162, 235)',
                       'rgba(153, 102, 255)',
@@ -220,7 +198,7 @@
                     ],
                     borderColor: [
                       'rgba(255, 206, 86)',
-                      'rgba(255, 180, 110)',
+                      'rgba(241, 90, 34, 1)',
                       'rgba(75, 192, 192)',
                       'rgba(54, 162, 235)',
                       'rgba(153, 102, 255)',
@@ -231,8 +209,7 @@
                   }
                 ]
             };
-        
-              //options
+
             var options = {
               responsive: true,
               title: {
@@ -251,8 +228,7 @@
                 }
               }
             };
-        
-              //create Pie Chart class object
+
             var chart1 = new Chart(ctx1, {
               type: "pie",
               data: data1,
@@ -267,57 +243,44 @@
       <!-- chart 3 -->
       <div class="col-md-12" style="margin-top:50px">
 
-       <!-- LAPORAN SEPEDA -->
-    <div class="card">
-      <div class="card-header">
-        Pendapatan tiket per acara
-      </div>
-      <div class="card-body">
-        <div class="chart-container">
-          <div class="pie-chart-container">
-          <canvas id="line-chart-3" style="display: block; width: 400px; height: 100px;" width="400" height="100" class="chartjs-render-monitor cc_cursor"></canvas>
+       <!-- LAPORAN PENDAPATAN -->
+       <div id="pendapatan">
+        <div class="card">
+          <div class="card-header">
+          <a class="text-white ">
+            Pendapatan tiket per acara
+          </a>
           </div>
-        </div> 
+          <div class="card-body">
+            <div class="chart-container">
+              <div class="line-chart-container">
+                <canvas id="line-chart-3" style="display: block; width: 400px; height: 100px;" width="400" height="100" class="chartjs-render-monitor cc_cursor"></canvas>
+              </div>
+            </div> 
+          </div>
         </div>
       </div>
 
         <script>
           $(function(){
-              //get the pie chart canvas
             var cData2 = JSON.parse(`<?php echo $chart_data2; ?>`);
             var ctx2 = $("#line-chart-3");
         
-              //pie chart data
+              //line chart data
             var data2 = {
               labels: cData2.label2,
                 datasets: [
                   {
                     label: "Pendapatan",
                     data: cData2.data2,
-                    backgroundColor: [
-                      'rgba(255, 206, 86)',
-                      'rgba(255, 180, 110)',
-                      'rgba(75, 192, 192)',
-                      'rgba(54, 162, 235)',
-                      'rgba(153, 102, 255)',
-                      'rgb(192, 192, 102)',
-                      'rgba(255, 159, 64)',
-                    ],
-                    borderColor: [
-                      'rgba(255, 206, 86)',
-                      'rgba(255, 180, 110)',
-                      'rgba(75, 192, 192)',
-                      'rgba(54, 162, 235)',
-                      'rgba(153, 102, 255)',
-                      'rgb(192, 192, 102)',
-                      'rgba(255, 159, 64)',
-                    ],
-                    borderWidth: [1, 1, 1, 1, 1,1,1]
+                    backgroundColor:'rgba(255, 206, 86)',
+                    borderColor:'rgba(255)',
+                    borderWidth: [15, 15, 15, 15, 15,15,15],
+                    fill: true,
                   }
                 ]
             };
-        
-              //options
+
             var options = {
               responsive: true,
               title: {
@@ -336,8 +299,7 @@
                 }
               }
             };
-        
-              //create Pie Chart class object
+
             var chart2 = new Chart(ctx2, {
               type: "line",
               data: data2,
@@ -353,32 +315,22 @@
   </div>
 
 
-  
-  <!-- End of Page Wrapper -->
-
-  <!-- Scroll to Top Button-->
   <a class="scroll-to-top rounded" href="#page-top">
     <i class="fas fa-angle-up"></i>
   </a>
 
   @include('include.logoutmodal')
 
-  <!-- Bootstrap core JavaScript-->
   <script src="/admin/vendor/jquery/jquery.min.js"></script>
   <script src="/admin/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-  <!-- Core plugin JavaScript-->
   <script src="/admin/vendor/jquery-easing/jquery.easing.min.js"></script>
 
-  <!-- Custom scripts for all pages-->
   <script src="/admin/js/sb-admin-2.min.js"></script>
 
-  <!-- Page level plugins -->
   <script src="/admin/vendor/datatables/jquery.dataTables.min.js"></script>
   <script src="/admin/vendor/datatables/dataTables.bootstrap4.min.js"></script>
 
-
-  <!-- Page level custom scripts -->
   <script src="/admin/js/demo/datatables-demo.js"></script>
   <script src="/admin/js/demo/chart-pie-demo.js "></script>
   <script src="/admin/js/demo/chart-bar-demo.js"></script>

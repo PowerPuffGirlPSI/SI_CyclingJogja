@@ -76,6 +76,7 @@
         </div>
       </li>
 
+          
       <li class="nav-item active">
         <a class="nav-link" href="/admin/laporan_sepeda">
           <i class="fas fa-fw fa-chart-area"></i>
@@ -88,6 +89,8 @@
       </div>
     </ul>
     <!-- End of Sidebar -->
+
+  
     
     <!-- Content Wrapper -->
     <div id="content-wrapper" class="d-flex flex-column">
