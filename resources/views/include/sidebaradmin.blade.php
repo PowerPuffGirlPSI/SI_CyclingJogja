@@ -39,29 +39,6 @@
         <div class="sidebar-brand-icon rotate-n-15">
           <i class="fas fa-laugh-wink"></i>
         </div>
-<<<<<<< HEAD
-    
-        <!-- Nav Item - Pages Collapse Menu -->
-        <li class="nav-item active">
-          <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-            <i class="fas fa-fw fa-table"></i>
-            <span>Admin</span>
-          </a>
-          <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-            <div class="bg-white py-2 collapse-inner rounded">
-              <h6 class="collapse-header">Tabel:</h6>
-              <a class="collapse-item" href="/admin/tabel_pengguna">Pengguna</a>
-              <a class="collapse-item" href="/admin/tabel_event">Event</a>
-              <a class="collapse-item" href="/admin/tabel_tiket">Pemesanan Tiket</a>
-              <a class="collapse-item" href="/admin/tabel_penyewa">Penyewa Sepeda</a>
-              <a class="collapse-item" href="/admin/tabel_sepeda">Sepeda</a>
-              
-            </div>
-          </div>
-        </li>
-
-        <li class="nav-item active">
-=======
         <div class="sidebar-brand-text mx-3">Cycling Jogja Admin</div>
       </a>
   
@@ -103,14 +80,11 @@
       </li>
 
       <li class="nav-item active">
->>>>>>> dde2e02492f5bfb74332c801bbfe1d7994fbfd9e
         <a class="nav-link" href="/admin/laporan_sepeda">
           <i class="fas fa-fw fa-chart-area"></i>
           <span>Laporan</span></a>
       </li>
           
-<<<<<<< HEAD
-=======
       <li class="nav-item active">
         <a class="nav-link"  href="/admin/laporan_peserta">
           <i class="fas fa-fw fa-chart-area"></i>
@@ -121,16 +95,9 @@
           <i class="fas fa-fw fa-chart-area"></i>
           <span>Penyewa Sepeda</span></a>
       </li>
->>>>>>> dde2e02492f5bfb74332c801bbfe1d7994fbfd9e
       <!-- Sidebar Toggler (Sidebar) -->
       <div class="text-center d-none d-md-inline">
         <button class="rounded-circle border-0" id="sidebarToggle"></button>
       </div>
     </ul>
-<<<<<<< HEAD
     <!-- End of Sidebar -->
-      
-      <!-- End of Sidebar -->
-=======
-    <!-- End of Sidebar -->
->>>>>>> dde2e02492f5bfb74332c801bbfe1d7994fbfd9e

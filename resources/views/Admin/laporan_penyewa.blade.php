@@ -22,6 +22,7 @@
                             <th>No</th>
                             <th>Nama Penyewa</th>
                             <th>Sepeda Yang Dipinjam</th>
+                            <th>Event Yang Diikuti</th>
                             <th>Kondisi Kembali Penyewaan</th>
                             <th>No Token</th>
                     </tr>
@@ -31,6 +32,7 @@
                             <th>No</th>
                             <th>Nama Penyewa</th>
                             <th>Sepeda Yang Dipinjam</th>
+                            <th>Event Yang Diikuti</th>
                             <th>Kondisi Kembali Penyewaan</th>
                             <th>No Token</th>
                     </tr>
@@ -44,6 +46,7 @@
                    <td>{{$no++}}</td>
                    <td>{{$t->nama}}</td>
                    <td>{{$t->jenis}}</td>
+                   <td>{{$t->nama_event}}</td>
                    <td>{{$t->kondisi_kembali_penyewaan}}</td>
                    <td>{{$t->token}}</td>
                  </tr>

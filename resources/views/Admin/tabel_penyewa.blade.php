@@ -21,6 +21,7 @@
                             <th>No</th>
                             <th>Peserta</th>
                             <th>Sepeda yang disewa</th>
+                            <th>Event yang diikuti</th>
                             <th>Kondisi</th>
                             <th>Status</th>
                             <th>Status Penyewaan</th>
@@ -32,9 +33,10 @@
                   </thead>
                   <tfoot>
                     <tr>
-                            <th>No</th>
+                    <th>No</th>
                             <th>Peserta</th>
                             <th>Sepeda yang disewa</th>
+                            <th>Event yang diikuti</th>
                             <th>Kondisi</th>
                             <th>Status</th>
                             <th>Status Penyewaan</th>
@@ -53,6 +55,7 @@
                    <td>{{$no++}}</td>
                    <td>{{$p->id_user}}</td>
                    <td>{{$p->id_sepeda}}</td>
+                   <td>{{$p->id_event}}</td>
                    <td>{{$p->kondisi}}</td>
                    <td>{{$p->status}}</td>
                    <td>{{$p->status_penyewaan}}</td>

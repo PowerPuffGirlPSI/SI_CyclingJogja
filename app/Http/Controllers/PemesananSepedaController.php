@@ -46,7 +46,9 @@ class PemesananSepedaController extends Controller
         $kondisi_kembali_penyewaan= NULL;
 
         $token = rand(1, 99999999);
-         $id_event = DB::table('events')->where('id', $id_event);
+        $id_event = Event::get(['id'])
+        ->max('id');
+        
 	DB::table('penyewas')->insert([
         'kondisi' => $kondisi,
 		'status' => $status,

@@ -66,9 +66,6 @@
           <i class="fas fa-fw fa-chart-area"></i>
           <span>Laporan</span></a>
       </li>
-<<<<<<< HEAD
-
-=======
           
       <li class="nav-item active">
         <a class="nav-link"  href="/admin/laporan_peserta">
@@ -81,7 +78,6 @@
           <span>Penyewa Sepeda</span></a>
       </li>
       <!-- Sidebar Toggler (Sidebar) -->
->>>>>>> dde2e02492f5bfb74332c801bbfe1d7994fbfd9e
       <div class="text-center d-none d-md-inline">
         <button class="rounded-circle border-0" id="sidebarToggle"></button>
       </div>
