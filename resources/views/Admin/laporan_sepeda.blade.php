@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -25,7 +27,9 @@
 </head>
 
 <body id="page-top">
+
   <div id="wrapper">
+
     <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
       <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/admin/dashboard">
         <div class="sidebar-brand-icon rotate-n-15">
@@ -77,12 +81,13 @@
           <i class="fas fa-fw fa-chart-area"></i>
           <span>Penyewa Sepeda</span></a>
       </li>
+
+
       <!-- Sidebar Toggler (Sidebar) -->
       <div class="text-center d-none d-md-inline">
         <button class="rounded-circle border-0" id="sidebarToggle"></button>
       </div>
       </ul>
-
     <div class="container">
        <div class="col-md-12">
         <!-- LAPORAN TIKET-->
@@ -102,7 +107,7 @@
             </div>
           </div>
         </div>
-
+        
         <script>
           $(function(){
             var cData = JSON.parse(`<?php echo $chart_data; ?>`);
