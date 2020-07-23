@@ -145,15 +145,36 @@ bottom: 76.12%;
 font-family: Roboto;
 font-style: italic;
 font-weight: 300;
-font-size: 40px;
+font-size: 35px;
 line-height: 47px;
-text-align: center;
+text-align: left;
 letter-spacing: 0.03em;
 text-indent: 2px;
 
 color: #292F33;
 
   }
+
+
+  .jenis-sepeda{
+    position: absolute;
+    left: 25.14%;
+    right: 32.78%;
+    top: 60.35%;
+    bottom: 76.12%;
+    
+    font-family: Roboto;
+    font-style: italic;
+    font-weight: 300;
+    font-size: 35px;
+    line-height: 47px;
+    text-align: left;
+    letter-spacing: 0.03em;
+    text-indent: 2px;
+    
+    color: #292F33;
+    
+      }
 
 .nama-pengguna{
 
@@ -168,7 +189,7 @@ font-style: normal;
 font-weight: bold;
 font-size: 50px;
 line-height: 59px;
-text-align: center;
+text-align: left;
 letter-spacing: 0.03em;
 text-indent: 2px;
 
@@ -196,7 +217,7 @@ bottom: 79.03%;
 font-family: Roboto;
 font-style: normal;
 font-weight: bold;
-font-size: 15px;
+font-size: 20px;
 line-height: 59px;
 text-align: center;
 letter-spacing: 0.03em;

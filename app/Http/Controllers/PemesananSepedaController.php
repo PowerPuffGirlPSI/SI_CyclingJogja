@@ -28,7 +28,7 @@ class PemesananSepedaController extends Controller
 
         
 
-        return view('pemesanansepeda',compact('sepeda','user','events', 'tiket','event'));
+        return view('pemesanansepeda',compact('sepeda','user','events','event'));
     }
 
     /**
