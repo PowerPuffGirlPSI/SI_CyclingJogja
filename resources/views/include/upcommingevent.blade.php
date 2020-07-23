@@ -47,7 +47,7 @@
             </table>
           </div>
           </div>
-          <a href="/pemesanan/{{ $q->id}}" class="btn btn-primary" style="background-color:#F38230; border-color:#F38230">Gabung</a>
+          <!--<a href="/pemesanan/{{ $q->id}}" class="btn btn-primary" style="background-color:#F38230; border-color:#F38230">Gabung</a>-->
         </div>
       </div>
       <br><br>
